@@ -1,31 +1,61 @@
-import { useState, useRef } from "react";
+import { useState, CSSProperties, useRef } from "react";
 import { useDrop } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
-
+import { DragItem } from "./interfaces"
+import update from 'immutability-helper'
 import Brick from "./Brick";
 
 export interface TargetProps {
 }
 
 export default function Target(params: TargetProps) {
+    const [hanguls, setHanguls] = useState<{
+        [key: string]: {
+            top: number
+            left: number
+            from: string
+            hangul: string
+            id: string
+        }
+    }>({})
 
-    const [hanguls, setHanguls] = useState<Array<string>>([])
+    // local variable resets to 0 after render
+    // useRef stores the previous vale
+    const uniqueKey = useRef(0);
 
-    function addHangul(t: string) {
-        setHanguls(oldItem => [...oldItem, t])
+    function addHangul(hangul: string, top: number, left: number) {
+
+        const idx = `${hangul}${uniqueKey.current++}`
+
+        setHanguls(prevState => ({
+            ...prevState,
+
+            [idx]: {
+                top: top,
+                left: left,
+                from: "target",
+                hangul: hangul,
+                id: idx
+            }
+
+        }));
     }
 
     const [{ isOver }, drop] = useDrop({
         accept: ItemTypes.HANGUL,
-        drop(item) { addHangul(item.t) },
+        drop(item: DragItem) {
+            if (item.from == "source")
+                addHangul(item.hangul, item.top, item.left)
+        },
         collect: monitor => ({ isOver: !!monitor.isOver() }),
     })
 
 
-    // Use local variable instead of useRef cause variable resets to 0 and align with letters count
-    // , useRef stores the vale and keep changing the index
-    let uniqueKey = 0;
-    const combineHangul = hanguls.map((hangul) => <Brick key={`${hangul}${uniqueKey++}`} hangul={hangul} />)
+    const combineHangul = []
+    for (let key in hanguls) {
+        combineHangul.push(<Brick key={hanguls[key].id} hangul={hanguls[key].hangul} left={hanguls[key].left} top={hanguls[key].top} from="target" />)
+    }
+
 
     return (
         <div style={{
@@ -42,6 +72,9 @@ export default function Target(params: TargetProps) {
             >
                 {combineHangul}
             </div>
+            <button onClick={() => setHanguls([])}>
+                Clear
+            </button>
         </div>
     )
 }

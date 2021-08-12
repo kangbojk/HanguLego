@@ -2,15 +2,17 @@ import { memo } from "react";
 import Brick from "./Brick";
 
 export interface SourceProps {
-    hanguls: string
+    consonants: string
+    vowels: string
 }
 
 function AreEqual(prev: SourceProps, next: SourceProps) {
-    return prev.hanguls === next.hanguls;
+    return prev.consonants === next.consonants && prev.vowels === next.vowels;
 }
 
-export const Source = memo(function Source({ hanguls }) {
-    const letters = hanguls.split(" ").map((hangul) => <Brick key={hangul} hangul={hangul} />)
+export const Source = memo(function Source({ consonants, vowels }) {
+    const c19 = consonants.split(" ").map((hangul) => <Brick key={hangul} hangul={hangul} left={0} top={0} from="source" />)
+    const v21 = vowels.split(" ").map((hangul) => <Brick key={hangul} hangul={hangul} left={0} top={0} from="source" />)
     return (
         <div style={{
             backgroundColor: 'gray',
@@ -19,12 +21,21 @@ export const Source = memo(function Source({ hanguls }) {
         }}>
 
             <h2>Source</h2>
-            <div
-                style={{
+            <div>
+                <div style={{
                     display: 'flex'
-                }}
-            >
-                {letters}
+                }}>
+                    <span>Consonants</span>
+                    {c19}
+                </div>
+
+                <div style={{
+                    display: 'flex'
+                }}>
+                    <span>Vowels</span>
+                    {v21}
+                </div>
+
             </div>
         </div>
     )

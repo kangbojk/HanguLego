@@ -72,7 +72,7 @@ export default function Target(params: TargetProps) {
             >
                 {combineHangul}
             </div>
-            <button onClick={() => setHanguls([])}>
+            <button onClick={() => setHanguls({})}>
                 Clear
             </button>
         </div>

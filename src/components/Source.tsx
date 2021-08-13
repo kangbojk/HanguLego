@@ -20,7 +20,6 @@ export const Source = memo(function Source({ consonants, vowels }) {
             padding: 12,
         }}>
 
-            <h2>Source</h2>
             <div>
                 <div style={{
                     display: 'flex'

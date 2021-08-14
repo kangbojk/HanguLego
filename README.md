@@ -13,6 +13,6 @@ Learn hanguls(Korean letter) like stacking LEGO. Reinforce your memory every tim
 
 ## Learn More
 
-You can learn more about my language learnign ideas 👉 [To Learn Korean I Made a Game](https://www.youtube.com/watch?v=7syJnOKJQAQ&t=324s).
+You can learn more about my language learnign ideas 👉 [To Learn Korean I Made a Game](https://www.youtube.com/watch?v=7syJnOKJQAQ).
 
 Ideas about this tool will be released soon.

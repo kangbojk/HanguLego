@@ -1,6 +1,8 @@
 import { useDrag } from 'react-dnd';
 import { ItemTypes } from './ItemTypes';
-import { CSSProperties } from 'react';
+import { CSSProperties, useEffect } from 'react';
+
+import useAudio, { AudioMap } from './Sound'
 
 export interface BrickProps {
     hangul: string
@@ -21,6 +23,9 @@ export default function Brick(props: BrickProps) {
     const fill = 'black'
     const stroke = 'white'
 
+    const audioURL: string = AudioMap[hangul]
+    const toggleAudio = useAudio(audioURL);
+
     //  depends on sent variable
     const [{ isDragging }, drag] = useDrag(
         () => ({
@@ -29,6 +34,11 @@ export default function Brick(props: BrickProps) {
             collect: (monitor) => ({ isDragging: !!monitor.isDragging() }),
         }), [top, left, from]
     )
+
+    useEffect(() => {
+        if (audioURL && toggleAudio)
+            toggleAudio()
+    }, [isDragging])
 
     // add offset for movable brick
     if (from === "target") {

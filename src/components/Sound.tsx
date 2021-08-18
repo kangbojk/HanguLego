@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import hangulJSON from "./scrapper/hangul.json"
 
 export interface audioFn {
     (): void
@@ -29,8 +30,4 @@ const useAudio = (url: string) => {
 
 export default useAudio
 
-export const AudioMap: { [key: string]: string } = {
-    "ㄱ": "https://90daykoreanaudiobytes.s3-us-west-1.amazonaws.com/audio-giyeok.mp3",
-    "ㄲ": "https://90daykoreanaudiobytes.s3-us-west-1.amazonaws.com/audio-ssanggiyeok-new.mp3",
-    "ㄴ": "https://90daykoreanaudiobytes.s3-us-west-1.amazonaws.com/audio-nieun-new.mp3",
-}
+export const AudioMap: { [key: string]: string } = hangulJSON

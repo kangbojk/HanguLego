@@ -1,7 +1,18 @@
 {
   "name": "hangulego",
   "version": "0.1.0",
-  "private": true,
+  "description": "Learn Hangul(Korean alphabet) Like Building LEGO",
+  "homepage": "https://github.com/kangbojk/HanguLego",
+  "author": "Joseph Kang <jk@carryou.dev> (https://www.carryou.dev/",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:kangbojk/HanguLego.git"
+  },
+  "keywords": [
+    "hangul",
+    "korean",
+    "alphabet"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",

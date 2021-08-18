@@ -26,7 +26,7 @@ export default function Brick(props: BrickProps) {
     const audioURL: string = AudioMap[hangul]
     const toggleAudio = useAudio(audioURL);
 
-    //  depends on sent variable
+    //  pass offset variables to drop target
     const [{ isDragging }, drag] = useDrag(
         () => ({
             type: ItemTypes.HANGUL,
@@ -36,7 +36,7 @@ export default function Brick(props: BrickProps) {
     )
 
     useEffect(() => {
-        if (audioURL && toggleAudio)
+        if (audioURL && toggleAudio && isDragging)
             toggleAudio()
     }, [isDragging])
 
@@ -59,6 +59,7 @@ export default function Brick(props: BrickProps) {
         )
     }
 
+    // oiginal bricks in source
     return (
         <div
             style={{

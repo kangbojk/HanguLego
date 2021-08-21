@@ -1,4 +1,4 @@
-import { useState, CSSProperties, useRef, useCallback } from "react";
+import { useState, CSSProperties, useRef, useCallback, useEffect } from "react";
 import { DropTargetMonitor, useDrop, XYCoord } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
 import { DragItem } from "./interfaces"
@@ -6,6 +6,8 @@ import update from 'immutability-helper'
 import Brick from "./Brick";
 
 import * as hanguljs from 'hangul-js';
+
+import useAudio from "./Sound";
 
 export interface TargetProps {
 }
@@ -83,13 +85,23 @@ export default function Target(params: TargetProps) {
     }
     word = hanguljs.assemble(letters)
 
+    // let wordURL = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${word}&tl=ko-KR`
+    // let togglePronunciation = new Audio();
+    // useEffect(() => {
+    //     togglePronunciation.src = wordURL
+    // }, [word])
+
+    const msg = new SpeechSynthesisUtterance(word);
+    msg.lang = "ko-KR"
+    msg.rate = 0.5
+
     return (
         <div style={{
             backgroundColor: isOver ? 'rgb(182, 199, 151)' : 'gray',
             margin: 12,
             padding: 12,
         }} ref={drop}>
-            <h2>👉 {word}</h2>
+            <h2 ><span style={{ cursor: 'pointer', }} onClick={() => { window.speechSynthesis.speak(msg); }}>👉</span> {word}</h2>
             <div style={{ display: 'flex', position: 'relative', }} >
                 {combineHangul}
             </div>

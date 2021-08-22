@@ -1,10 +1,14 @@
-# HanguLego
 
+<div align="center">
+
+  ![HanguLego](assets/hangulego_v3.png "HanguLego")
+</div>
 Learn hanguls(Korean letter) like stacking LEGO. Reinforce your memory every time you drag a brick.
 
 ## Features
-
-![](./demo.gif)
+<p align="center">
+  <img src="assets/demo.gif" alt="domo" />
+</p>
 
 * Drag and drop to assemable hangul
 

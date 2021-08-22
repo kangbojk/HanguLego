@@ -4,12 +4,39 @@ Learn hanguls(Korean letter) like stacking LEGO. Reinforce your memory every tim
 
 ## Features
 
+![](./demo.gif)
+
 * Drag and drop to assemable hangul
+
+    `react-dnd` ships the dragging mechanism. 
+    Dragging over clicking strengthen the memory about hangul. Mobile dragging could be fulfilled with `touch-backend`
+
 * Hangul pronunciation reinforce your memory
-* Color brick highlighting hangul structure
+
+    Pronunciation scrapped from _90 Day Korean_, word pronunciation take the advantage of _Google Translate_ (Could also try Chrome builtin `SpeechSynthesisUtterance`)
+
+* Colorful brick highlighting hangul structure
+    
+    TODO
+
+* Learning progress tracking (possibly?)
+
+    Future maybe 😎
 
 ## Design Concept
-    TODO
+The crafting of this tool roused during my journey of self-taugt Korean. 
+According to Sejong the Great(creator/compiler of Hangul), "A wise man can acquaint himself with them before the morning is over; a stupid man can learn them in the space of ten days.", but after a month, I  couldn't memorise hangul. 
+
+Instead of giving up, I came up with an idea, make a tool that help reinforcing hangul's pronunciation.
+I took the concept of LEGO, when ever I want to serch a word, I need to drag consonants and vowels to construct the Korean word. HanguLego will speak out the pronunication of the hangul you're dragging.
+
+Since the Hangul structure is scientific, adding colors to different parts of hangul that compose a word may be helpful for memrising the word.
+Keep in mind that HanguLego is not meant to be dictionary, but a learning tool that help you conquer the Korean Learning Advantage.
+
+Once I find any useful learning tracking approach, HanguLego could be equipped with progressing feature, feel free to reach out if you have any ideas!
+
+## Usage
+Clone the project and `npm start` to run locally or try it on [Carryou](https://www.carryou.dev/HanguLego)
 
 ## Learn More
 

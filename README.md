@@ -46,7 +46,7 @@ Keep in mind that HanguLego is not meant to be a dictionary, but a learning tool
 Once I find any useful learning tracking approach, HanguLego could be equipped with progressing feature, feel free to reach out if you have any ideas!
 
 ## Usage
-Clone the project and `npm start` to run locally or try it on [Carryou](https://www.carryou.dev/HanguLego)
+Clone the project and `npm start` to run locally or try it on [Carryou](https://hangulego.carryou.dev/)
 
 ## Learn More
 

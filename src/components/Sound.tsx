@@ -7,6 +7,8 @@ export interface audioFn {
 
 const useAudio = (url: string) => {
 
+    // Hint Gatsby Audio type
+    // const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
     const [audio] = useState(new Audio(url));
     const [playing, setPlaying] = useState(false);
 

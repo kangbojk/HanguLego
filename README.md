@@ -1,7 +1,7 @@
 
 <div align="center">
 
-  ![HanguLego](assets/hangulego_v4.png "HanguLego")
+  ![HanguLego](assets/hangulego_v5.png "HanguLego")
 </div>
 Learn hanguls(Korean letter) like stacking LEGO. Reinforce your memory every time you drag a brick.
 

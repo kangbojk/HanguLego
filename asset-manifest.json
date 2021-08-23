@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/kangbojk/HanguLego/static/css/main.a617e044.chunk.css",
-    "main.js": "/kangbojk/HanguLego/static/js/main.72d8e783.chunk.js",
-    "main.js.map": "/kangbojk/HanguLego/static/js/main.72d8e783.chunk.js.map",
-    "runtime-main.js": "/kangbojk/HanguLego/static/js/runtime-main.0b39e0c2.js",
-    "runtime-main.js.map": "/kangbojk/HanguLego/static/js/runtime-main.0b39e0c2.js.map",
-    "static/js/2.8157a8a4.chunk.js": "/kangbojk/HanguLego/static/js/2.8157a8a4.chunk.js",
-    "static/js/2.8157a8a4.chunk.js.map": "/kangbojk/HanguLego/static/js/2.8157a8a4.chunk.js.map",
-    "static/js/3.5ed80650.chunk.js": "/kangbojk/HanguLego/static/js/3.5ed80650.chunk.js",
-    "static/js/3.5ed80650.chunk.js.map": "/kangbojk/HanguLego/static/js/3.5ed80650.chunk.js.map",
-    "index.html": "/kangbojk/HanguLego/index.html",
-    "static/css/main.a617e044.chunk.css.map": "/kangbojk/HanguLego/static/css/main.a617e044.chunk.css.map",
-    "static/js/2.8157a8a4.chunk.js.LICENSE.txt": "/kangbojk/HanguLego/static/js/2.8157a8a4.chunk.js.LICENSE.txt"
+    "main.css": "/HanguLego/static/css/main.a617e044.chunk.css",
+    "main.js": "/HanguLego/static/js/main.72d8e783.chunk.js",
+    "main.js.map": "/HanguLego/static/js/main.72d8e783.chunk.js.map",
+    "runtime-main.js": "/HanguLego/static/js/runtime-main.feb8c128.js",
+    "runtime-main.js.map": "/HanguLego/static/js/runtime-main.feb8c128.js.map",
+    "static/js/2.8157a8a4.chunk.js": "/HanguLego/static/js/2.8157a8a4.chunk.js",
+    "static/js/2.8157a8a4.chunk.js.map": "/HanguLego/static/js/2.8157a8a4.chunk.js.map",
+    "static/js/3.5ed80650.chunk.js": "/HanguLego/static/js/3.5ed80650.chunk.js",
+    "static/js/3.5ed80650.chunk.js.map": "/HanguLego/static/js/3.5ed80650.chunk.js.map",
+    "index.html": "/HanguLego/index.html",
+    "static/css/main.a617e044.chunk.css.map": "/HanguLego/static/css/main.a617e044.chunk.css.map",
+    "static/js/2.8157a8a4.chunk.js.LICENSE.txt": "/HanguLego/static/js/2.8157a8a4.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.0b39e0c2.js",
+    "static/js/runtime-main.feb8c128.js",
     "static/js/2.8157a8a4.chunk.js",
     "static/css/main.a617e044.chunk.css",
     "static/js/main.72d8e783.chunk.js"

@@ -7,9 +7,11 @@ import Brick from "./Brick";
 
 import * as hanguljs from 'hangul-js';
 
-import useAudio from "./Sound";
-
 export interface TargetProps {
+}
+
+const btnStyle: CSSProperties = {
+    margin: 2,
 }
 
 export default function Target(params: TargetProps) {
@@ -85,11 +87,7 @@ export default function Target(params: TargetProps) {
     }
     word = hanguljs.assemble(letters)
 
-    // let wordURL = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${word}&tl=ko-KR`
-    // let togglePronunciation = new Audio();
-    // useEffect(() => {
-    //     togglePronunciation.src = wordURL
-    // }, [word])
+    const wordURL = `https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&q=${word}&tl=ko-KR`
 
     const msg = new SpeechSynthesisUtterance(word);
     msg.lang = "ko-KR"
@@ -101,13 +99,21 @@ export default function Target(params: TargetProps) {
             margin: 12,
             padding: 12,
         }} ref={drop}>
+            <meta name="referrer" content="no-referrer"></meta>
             <h2 ><span style={{ cursor: 'pointer', }} onClick={() => { window.speechSynthesis.speak(msg); }}>👉</span> {word}</h2>
             <div style={{ display: 'flex', position: 'relative', }} >
                 {combineHangul}
             </div>
-            <button onClick={() => setHanguls({})}>
+            <button style={btnStyle} onClick={() => setHanguls({})}>
                 Clear
             </button>
+            <button style={btnStyle} onClick={() => {
+                const togglePronunciation = new Audio(wordURL);
+                togglePronunciation.play()
+            }}>
+                ▶
+            </button>
+
         </div>
     )
 }

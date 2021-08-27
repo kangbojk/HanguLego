@@ -11,8 +11,9 @@ function AreEqual(prev: SourceProps, next: SourceProps) {
 }
 
 export const Source = memo(function Source({ consonants, vowels }) {
-    const c19 = consonants.split(" ").map((hangul) => <Brick key={hangul} hangul={hangul} left={0} top={0} from="source" />)
-    const v21 = vowels.split(" ").map((hangul) => <Brick key={hangul} hangul={hangul} left={0} top={0} from="source" />)
+    // id will be set after dropped
+    const c19 = consonants.split(" ").map((hangul) => <Brick key={hangul} id={''} hangul={hangul} left={0} top={0} from="source" />)
+    const v21 = vowels.split(" ").map((hangul) => <Brick key={hangul} id={''} hangul={hangul} left={0} top={0} from="source" />)
     return (
         <div style={{
             backgroundColor: 'gray',

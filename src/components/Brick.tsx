@@ -9,7 +9,7 @@ export interface BrickProps {
     left: number
     top: number
     from: string
-    id?: string
+    id: string
 }
 
 const style: CSSProperties = {
@@ -19,20 +19,20 @@ const style: CSSProperties = {
 }
 
 export default function Brick(props: BrickProps) {
-    const { hangul, top, left, from } = props;
+    const { id, hangul, top, left, from } = props;
     const fill = 'black'
     const stroke = 'white'
 
     const audioURL: string = AudioMap[hangul]
     const toggleAudio = useAudio(audioURL);
 
-    //  pass offset variables to drop target
+    //  pass required variables to drop target in dependency list
     const [{ isDragging }, drag] = useDrag(
         () => ({
             type: ItemTypes.HANGUL,
-            item: { hangul, top, left, from },
+            item: { id, hangul, top, left, from },
             collect: (monitor) => ({ isDragging: !!monitor.isDragging() }),
-        }), [top, left, from]
+        }), [id, top, left, from]
     )
 
     useEffect(() => {

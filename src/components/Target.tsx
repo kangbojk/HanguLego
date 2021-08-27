@@ -33,13 +33,11 @@ export default function Target(params: TargetProps) {
 
         const idx = `${hangul}${uniqueKey.current++}`
 
-        //check for duplicate?
-
         setHanguls(prevState => ({
             ...prevState,
 
-            // use hangul as key for the time being -> no duplicate?
-            [hangul]: {
+            // use "hangul+idx" as key, so word like 밥 can have duplicate letters ㅂ
+            [idx]: {
                 top: top,
                 left: left,
                 from: "target",
@@ -50,7 +48,7 @@ export default function Target(params: TargetProps) {
         }));
     }
 
-    //why useCallback -> store coord?
+    // cache moveHangul during re-rendering, ie: dragging hangul to modify position in Target box
     const moveHangul = useCallback(
         (id: string, left: number, top: number) => {
             setHanguls(
@@ -69,7 +67,7 @@ export default function Target(params: TargetProps) {
                 const delta = monitor.getDifferenceFromInitialOffset() as XYCoord
                 const left = Math.round(item.left + delta.x)
                 const top = Math.round(item.top + delta.y)
-                moveHangul(item.hangul, left, top)
+                moveHangul(item.id, left, top)
             }
 
         },
@@ -81,9 +79,9 @@ export default function Target(params: TargetProps) {
     const combineHangul = []
     for (let key in hanguls) {
         combineHangul.push(
-            <Brick key={hanguls[key].id} hangul={hanguls[key].hangul} left={hanguls[key].left} top={hanguls[key].top} from="target" />
+            <Brick key={key} id={key} hangul={hanguls[key].hangul} left={hanguls[key].left} top={hanguls[key].top} from="target" />
         )
-        letters.push(key)
+        letters.push(hanguls[key].hangul)
     }
     word = hanguljs.assemble(letters)
 

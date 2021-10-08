@@ -7,7 +7,7 @@ Learn hanguls(Korean letter) like stacking LEGO. Reinforce your memory every tim
 
 ## Features
 <p align="center">
-  <img src="assets/demo.gif" alt="domo" />
+  <img src="assets/demo.gif" alt="HanguLego demo" />
 </p>
 
 * Drag and drop to assemable hangul
@@ -45,7 +45,18 @@ Keep in mind that HanguLego is not meant to be a dictionary, but a learning tool
 
 Once I find any useful learning tracking approach, HanguLego could be equipped with progressing feature, feel free to reach out if you have any ideas!
 
-## Usage
+
+## How To Use HanguLego
+HanguLego works best when combining with existing learning content.
+
+Pick a platform you like, when you encounter some words you couldn't pronounce, drag Hangul to combine the word and memorize the pronunciation.
+
+<p align="center">
+  <img src="assets/usage_demo_v1.gif" alt="usage demo" />
+</p>
+
+
+## Developer
 Clone the project and `npm start` to run locally or try it on [Carryou](https://hangulego.carryou.dev/)
 
 ## Learn More

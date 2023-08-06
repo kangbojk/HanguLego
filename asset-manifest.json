@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/HanguLego/static/css/main.a617e044.chunk.css",
-    "main.js": "/HanguLego/static/js/main.0d2f6e82.chunk.js",
-    "main.js.map": "/HanguLego/static/js/main.0d2f6e82.chunk.js.map",
+    "main.js": "/HanguLego/static/js/main.7b7ab927.chunk.js",
+    "main.js.map": "/HanguLego/static/js/main.7b7ab927.chunk.js.map",
     "runtime-main.js": "/HanguLego/static/js/runtime-main.b5666eee.js",
     "runtime-main.js.map": "/HanguLego/static/js/runtime-main.b5666eee.js.map",
     "static/js/2.7bdadba9.chunk.js": "/HanguLego/static/js/2.7bdadba9.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.b5666eee.js",
     "static/js/2.7bdadba9.chunk.js",
     "static/css/main.a617e044.chunk.css",
-    "static/js/main.0d2f6e82.chunk.js"
+    "static/js/main.7b7ab927.chunk.js"
   ]
 }

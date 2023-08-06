@@ -1,4 +1,4 @@
-import { useState, CSSProperties, useRef, useCallback, useEffect } from "react";
+import { useState, CSSProperties, useRef, useCallback } from "react";
 import { DropTargetMonitor, useDrop, XYCoord } from "react-dnd";
 import { ItemTypes } from "./ItemTypes";
 import update from "immutability-helper";
@@ -63,7 +63,7 @@ export default function Target(params: TargetProps) {
   const [{ isOver }, drop] = useDrop({
     accept: ItemTypes.HANGUL,
     drop(item: DragItem, monitor: DropTargetMonitor) {
-      if (item.from == "source") addHangul(item.hangul, item.top, item.left);
+      if (item.from === "source") addHangul(item.hangul, item.top, item.left);
       else {
         const delta = monitor.getDifferenceFromInitialOffset() as XYCoord;
         const left = Math.round(item.left + delta.x);

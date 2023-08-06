@@ -1,35 +1,32 @@
-import React, { useState, useEffect } from "react";
-import hangulJSON from "./scrapper/hangul.json"
+import { useState, useEffect } from "react";
+import hangulJSON from "./scrapper/hangul.json";
 
 export interface audioFn {
-    (): void
+  (): void;
 }
 
 const useAudio = (url: string) => {
+  // Hint Gatsby Audio type
+  // const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
+  const [audio] = useState(new Audio(url));
+  const [playing, setPlaying] = useState(false);
 
-    // Hint Gatsby Audio type
-    // const [audio] = useState(typeof Audio !== "undefined" && new Audio(url));
-    const [audio] = useState(new Audio(url));
-    const [playing, setPlaying] = useState(false);
+  const toggle: audioFn = () => setPlaying(!playing);
 
-    const toggle: audioFn = () => setPlaying(!playing);
+  useEffect(() => {
+    playing ? audio.play() : audio.pause();
+  }, [playing]);
 
-    useEffect(() => {
-        playing ? audio.play() : audio.pause();
-    },
-        [playing]
-    );
+  useEffect(() => {
+    audio.addEventListener("ended", () => setPlaying(false));
+    return () => {
+      audio.removeEventListener("ended", () => setPlaying(false));
+    };
+  }, [audio]);
 
-    useEffect(() => {
-        audio.addEventListener('ended', () => setPlaying(false));
-        return () => {
-            audio.removeEventListener('ended', () => setPlaying(false));
-        };
-    }, []);
-
-    return toggle
+  return toggle;
 };
 
-export default useAudio
+export default useAudio;
 
-export const AudioMap: { [key: string]: string } = hangulJSON
+export const AudioMap: { [key: string]: string } = hangulJSON;

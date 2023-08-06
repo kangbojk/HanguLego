@@ -2,7 +2,7 @@
   "name": "hangulego",
   "version": "0.1.0",
   "description": "Learn Hangul(Korean alphabet) Like Building LEGO",
-  "homepage": "https://kangbojk.github.io",
+  "homepage": "https://kangbojk.github.io/HanguLego",
   "author": "Joseph Kang <kangbo.jk@gmail.com> (https://www.dollarsciences/)",
   "repository": {
     "type": "git",
